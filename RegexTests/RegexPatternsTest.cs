@@ -110,5 +110,37 @@ namespace RegexTests
             bool ssnValidates = Regex.IsMatch(MockConstants.SSNInvalid, SimpleRegex.SocialSecurityNumber);
             Assert.IsFalse(ssnValidates);
         }
+
+        [TestMethod]
+        public void ValidAmbassadorNumberPlate()
+        {
+            bool ambassadorIsValid = Regex.IsMatch(MockConstants.AmbassadorNumberPlateValid, SimpleRegex.DiplomaticNumberPlate);
+            Assert.IsTrue(ambassadorIsValid);
+        }
+
+        [TestMethod]
+        public void InvalidAmbassadorNumberPlate()
+        {
+            bool isValidAmbassadorPlate = Regex.IsMatch(MockConstants.AmbassadorNumberPlateInvalid, SimpleRegex.DiplomaticNumberPlate);
+            Assert.IsFalse(isValidAmbassadorPlate);
+        }
+
+        [TestMethod]
+        public void DiplomaticStaffNumberPlates_ShouldPass()
+        {
+            bool isValidDiplomat = Regex.IsMatch(MockConstants.AdminDiplomatNumberPlateValid, SimpleRegex.DiplomaticNumberPlate)
+                && Regex.IsMatch(MockConstants.DiplomatNumberPlateValid, SimpleRegex.DiplomaticNumberPlate)
+                && Regex.IsMatch(MockConstants.TechnicalDiplomatNumperPlateValid, SimpleRegex.DiplomaticNumberPlate);
+            Assert.IsTrue(isValidDiplomat);
+        }
+
+        [TestMethod]
+        public void DimplomaticStaffNumberPlates_ShouldFail()
+        {
+            bool isValidDiplomat = Regex.IsMatch(MockConstants.TecnhicalDiplomatNumberPlateInvalid, SimpleRegex.DiplomaticNumberPlate)
+                && Regex.IsMatch(MockConstants.DiplomatNumberPlateInvalid, SimpleRegex.DiplomaticNumberPlate)
+                && Regex.IsMatch(MockConstants.TecnhicalDiplomatNumberPlateInvalid, SimpleRegex.DiplomaticNumberPlate);
+            Assert.IsFalse(isValidDiplomat);
+        }
     }
 }

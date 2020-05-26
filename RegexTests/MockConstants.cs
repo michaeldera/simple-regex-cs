@@ -17,6 +17,13 @@ namespace RegexTests
         public static readonly string DriversLicenseValid = "00000AA";
         public static readonly string IDNumberValid = "00-000000A00";
         public static readonly string NumberPlateValid = "AAA-000";
+        public static readonly string AmbassadorNumberPlateValid = "12 CD";
+        public static readonly string AmbassadorNumberPlateInvalid = "1234 CD";
+        public static readonly string DiplomatNumberPlateValid = "12 CD 345";
+        public static readonly string DiplomatNumberPlateInvalid = "2 CD 3";
+        public static readonly string AdminDiplomatNumberPlateValid = "12 AD 345";
+        public static readonly string TechnicalDiplomatNumperPlateValid = "12 TCE 345";
+        public static readonly string TecnhicalDiplomatNumberPlateInvalid = "12 TCE";
         public static readonly string PassportNumberValid = "AA000000";
         public static readonly string SSNValid = "0000000A";
         public static readonly string NetoneNumberValid = "0710000000";
