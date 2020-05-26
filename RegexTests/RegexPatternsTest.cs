@@ -121,8 +121,8 @@ namespace RegexTests
         [TestMethod]
         public void InvalidAmbassadorNumberPlate()
         {
-            bool isBogusAmbassador = Regex.IsMatch(MockConstants.AmbassadorNumberPlateInvalid, SimpleRegex.DiplomaticNumberPlate);
-            Assert.IsFalse(isBogusAmbassador);
+            bool isValidAmbassadorPlate = Regex.IsMatch(MockConstants.AmbassadorNumberPlateInvalid, SimpleRegex.DiplomaticNumberPlate);
+            Assert.IsFalse(isValidAmbassadorPlate);
         }
 
         [TestMethod]
